@@ -1,18 +1,14 @@
 <template>
   <div 
     class="w-full h-screen p-2 
-      bg-gradient-to-t to-cyan-100 from-indigo-100
-      dark:to-cyan-700 dark:from-indigo-800">
+      bg-gradient-to-t to-sky-50 from-sky-100
+      dark:to-zinc-700 dark:from-zinc-800">
     <Header />
-    <div class="flex">
-      <Sidebar />
-      <RouterView />
-    </div>
+    <RouterView />
   </div>
 </template>
 
 <script setup>
 import Header from '../components/Header.vue'
-import Sidebar from '../components/Sidebar.vue'
 
 </script>

@@ -4,7 +4,7 @@ import axios from 'axios'
 export const home = defineStore('home', {
   state: () => ({
       isTheme: 'default',
-      isDark: true,
+      isDark: false,
       menus: [
         {
           name: 'Home',
