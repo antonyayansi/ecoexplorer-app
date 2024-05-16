@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --surface-0: 255 255 255;
+    --surface-50: 248 250 252;
+    --surface-100: 241 245 249;
+    --surface-200: 226 232 240;
+    --surface-300: 203 213 225;
+    --surface-400: 148 163 184;
+    --surface-500: 100 116 139;
+    --surface-600: 71 85 105;
+    --surface-700: 45 55 72;
+    --surface-800: 30 41 59;
+    --surface-900: 15 23 42;
+    --surface-950: 3 6 23;
+}
+
+.theme-default {
+    --color-primary-50: 130 179 243;
+    --color-primary-100: 130 179 243;
+    --color-primary-200: 94 154 242;
+    --color-primary-300: 58 129 241;
+    --color-primary-400: 26 115 232;
+    --color-primary-500: 26 115 232;
+    --color-primary-600: 22 102 209;
+    --color-primary-700: 18 89 186;
+    --color-primary-800: 14 76 163;
+    --color-primary-900: 11 63 140;
+    --color-primary-950: 10 46 110;
+    --color-primary-hover: 19 108 225;
+    --color-secondary: 71 147 248;
+    --color-success: 13 214 149;
+    --color-info: 45 152 247;
+    --color-danger: 255 49 49;
+    --color-warning: 210 186 30;
+}
+
+.theme-neon {
+    --color-primary-50: 6 168 149;
+    --color-primary-100: 6 168 149;
+    --color-primary-200: 6 168 149;
+    --color-primary-300: 6 168 149;
+    --color-primary-400: 6 168 149;
+    --color-primary-500: 6 168 149;
+    --color-primary-600: 5 151 127;
+    --color-primary-700: 4 134 103;
+    --color-primary-800: 3 117 79;
+    --color-primary-900: 2 100 55;
+    --color-primary-950: 1 66 31;
+    --color-primary-hover: 5 151 127;
+    --color-secondary: 28 212 200;
+    --color-success: 0 184 132;
+    --color-info: 58 157 255;
+    --color-danger: 255 26 26;
+    --color-warning: 250 166 40;
+}
+
+.theme-intenso {
+    --color-primary-50: 207 125 151;
+    --color-primary-100: 204 98 131;
+    --color-primary-200: 192 62 103;
+    --color-primary-300: 176 30 78;
+    --color-primary-400: 154 14 62;
+    --color-primary-500: 214 39 94;
+    --color-primary-600: 181 34 78;
+    --color-primary-700: 142 26 62;
+    --color-primary-800: 102 18 47;
+    --color-primary-900: 63 10 31;
+    --color-primary-950: 26 2 15;
+    --color-secondary: 219 63 125;
+    --color-success: 36 202 116;
+    --color-info: 40 141 241;
+    --color-danger: 211 35 35;
+    --color-warning: 235 160 20;
+}
+
+.theme-soleado {
+    --color-primary-50: 230 189 118;
+    --color-primary-100: 221 174 93;
+    --color-primary-200: 212 158 68;
+    --color-primary-300: 203 143 43;
+    --color-primary-400: 194 127 18;
+    --color-primary-500: 233 147 0;
+    --color-primary-600: 194 127 18;
+    --color-primary-700: 162 107 0;
+    --color-primary-800: 130 87 0;
+    --color-primary-900: 98 67 0;
+    --color-primary-950: 72 43 0;
+    --color-primary-hover: 206 131 3;
+    --color-secondary: 247 199 97;
+    --color-success: 125 220 24;
+    --color-info: 58 157 255;
+    --color-danger: 255 26 26;
+    --color-warning: 228 167 0;
+}
+
+.theme-moderno {
+    --color-primary-50: 189 128 226;
+    --color-primary-100: 180 109 226;
+    --color-primary-200: 168 93 226;
+    --color-primary-300: 156 77 226;
+    --color-primary-400: 143 61 226;
+    --color-primary-500: 151 17 235;
+    --color-primary-600: 124 24 187;
+    --color-primary-700: 106 22 163;
+    --color-primary-800: 88 20 139;
+    --color-primary-900: 70 18 115;
+    --color-primary-950: 46 24 28;
+    --color-primary-hover: 124 24 187;
+    --color-secondary: 173 61 243;
+    --color-success: 35 196 134;
+    --color-info: 40 171 228;
+    --color-danger: 201 35 35;
+    --color-warning: 238 139 26;
+}
+
+
+/* Otras configuraciones */
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://img.icons8.com/color/20/null/calendar--v1.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://img.icons8.com/color/20/null/calendar--v1.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://img.icons8.com/color/20/null/calendar--v1.png) no-repeat;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+}
+
+::selection {
+    background-color: #36e5b3; /* Cambia #ffcc00 al color que desees */
+    color: #000; /* Cambia #000 al color del texto que desees */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
