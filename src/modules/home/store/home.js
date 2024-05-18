@@ -38,6 +38,22 @@ export const home = defineStore('home', {
         this.cities = JSON.parse(localStorage.getItem('city'))
         this.current_city = JSON.parse(localStorage.getItem('current_city'))
       }
+    },
+    checkDarkMode(){
+      if(localStorage.getItem('isDark')){
+        this.isDark = true
+      }else{
+        this.isDark = false
+      }
+    },
+    setDarkMode(){
+      if(!this.isDark){
+        this.isDark = true
+        localStorage.setItem('isDark', true)
+      }else{
+        this.isDark = false
+        localStorage.removeItem('isDark')
+      }
     }
   }
 })

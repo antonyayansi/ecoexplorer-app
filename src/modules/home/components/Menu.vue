@@ -3,6 +3,7 @@
         <button 
             v-for="menu in menus" 
             :key="menu"
+            :title="menu.name"
             class="py-2 px-4 rounded-md 
             backdrop-blur text-white 
             hover:-translate-y-1 transition-transform duration-300 ease-in-out"

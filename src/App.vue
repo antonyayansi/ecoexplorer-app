@@ -12,7 +12,8 @@ import useHome from './modules/home/hooks/useHome'
 
 const {
   isDark,
-  isTheme
+  isTheme,
+  checkDarkMode
 } = useHome()
 
 watch(
@@ -28,6 +29,7 @@ watch(
 )
 
 onMounted(() => {
+  checkDarkMode()
   const htmlElement = document.documentElement;
   if (isDark.value) {
     htmlElement.classList.add('dark');
