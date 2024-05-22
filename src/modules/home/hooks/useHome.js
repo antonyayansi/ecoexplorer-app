@@ -8,6 +8,7 @@ export default () => {
       ...storeRef,
       getCurrentCityByIp: home().getCurrentCityByIp,
       checkDarkMode: home().checkDarkMode,
-      setDarkMode: home().setDarkMode
+      setDarkMode: home().setDarkMode,
+      getRanges: home().getRanges,
     }
 }

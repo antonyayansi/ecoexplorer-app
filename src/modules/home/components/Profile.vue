@@ -8,7 +8,7 @@
     </button>
     <button 
         v-if="!authenticated"
-        class="bg-primary-500 hover:bg-primary-600 px-4 py-2 rounded-full text-white"
+        class="text-primary-500 dark:text-primary-300 hover:bg-skin-primary/20 font-medium px-4 py-2 rounded-full transition-colors duration-200"
         >
         Login
     </button>

@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import publicApi from '../../../apis/publicApi'
 
 export const home = defineStore('home', {
   state: () => ({
@@ -18,7 +19,9 @@ export const home = defineStore('home', {
         },
       ],
       cities: [],
-      current_city: null
+      current_city: null,
+      ranges: [],
+      typeRange: 'day' // day, week, month
   }),
   actions: {
     async getCurrentCityByIp() {
@@ -39,6 +42,18 @@ export const home = defineStore('home', {
         this.current_city = JSON.parse(localStorage.getItem('current_city'))
       }
     },
+    async getRanges(){
+      try{
+        const { data } = await publicApi.get('/rangos', {
+          params: {
+            tipo: this.typeRange
+          }
+        })
+        this.ranges = data
+      }catch(e){
+        console.error(e)
+      }
+    },
     checkDarkMode(){
       if(localStorage.getItem('isDark')){
         this.isDark = true
@@ -54,6 +69,7 @@ export const home = defineStore('home', {
         this.isDark = false
         localStorage.removeItem('isDark')
       }
-    }
+    },
+
   }
 })

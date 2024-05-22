@@ -5,7 +5,7 @@
           <CardTemperature />
         </div>
         <div class="w-full md:w-2/3">
-
+          <ChartLine />
         </div>
     </div>
   </div>
@@ -13,6 +13,7 @@
 
 <script setup>
 import CardTemperature from '../modules/temperature/components/CardIndex.vue'
+import ChartLine from '../modules/temperature/components/ChartLine.vue';
 
 
 </script>

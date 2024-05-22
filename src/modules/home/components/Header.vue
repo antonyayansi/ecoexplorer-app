@@ -1,6 +1,6 @@
 <template>
    <div class="flex justify-between items-center pb-4">
-      <div class="font-bold flex-1">
+      <div class="text-zinc-900 dark:text-white font-bold flex-1">
         EcoX 🏝
       </div>
       <div class="flex justify-center flex-1">
