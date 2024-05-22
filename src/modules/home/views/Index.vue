@@ -7,6 +7,9 @@
         <div class="w-full md:w-2/3">
           <ChartLine />
         </div>
+        <div class="w-full">
+          <Map />
+        </div>
     </div>
   </div>
 </template>
@@ -14,6 +17,6 @@
 <script setup>
 import CardTemperature from '../modules/temperature/components/CardIndex.vue'
 import ChartLine from '../modules/temperature/components/ChartLine.vue';
-
+import Map from '../modules/temperature/components/Map.vue'
 
 </script>
