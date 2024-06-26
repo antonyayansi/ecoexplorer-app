@@ -5,7 +5,7 @@
         class="rounded-full py-2 px-4 text-white cursor-pointer backdrop-blur bg-primary-500 dark:bg-primary-400
         active:translate-y-1 transition-transform duration-300 ease-in-out"
     >
-        <h1 class="font-bold">
+        <h1 class="font-bold text-sm">
             <fa icon="location-dot"/> 
             <span class="ml-2">{{ current_city.city }} - {{ current_city.country }}</span>
         </h1>

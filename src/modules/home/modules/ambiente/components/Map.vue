@@ -13,6 +13,7 @@ const captureLatLong = (map) => {
   navigator.geolocation.getCurrentPosition(
       (position) => {
           const { latitude, longitude } = position.coords;
+          console.log(position.coords)
           isLocationEnabled.value = true;
           // Centra el mapa en las coordenadas del usuario.
           map.setCenter([longitude, latitude]);

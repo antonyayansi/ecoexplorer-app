@@ -21,7 +21,10 @@ export const home = defineStore('home', {
       cities: [],
       current_city: null,
       ranges: [],
-      typeRange: 'day' // day, week, month
+      typeRange: 'day', // day, week, month
+      optionsView: ['Temperatura', 'Radiación', 'Presión'],
+      viewSelected: 'Temperatura',
+      devices: []
   }),
   actions: {
     async getCurrentCityByIp() {
