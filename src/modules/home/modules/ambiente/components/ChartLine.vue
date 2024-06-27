@@ -10,7 +10,7 @@
         :class="typeRange == 'Semana' ? 'bg-primary-500' : 'bg-primary-100'"
         class="text-white p-2 rounded-xl">Semana</button>
     </div>
-    <div class="w-full">
+    <div class="w-full h-[220px]">
       <Line :data="data" :options="options" />
     </div>
   </div>

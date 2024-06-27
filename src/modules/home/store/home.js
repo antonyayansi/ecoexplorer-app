@@ -5,7 +5,7 @@ import publicApi from '../../../apis/publicApi'
 export const home = defineStore('home', {
   state: () => ({
       isTheme: 'default',
-      isDark: false,
+      isDark: true,
       menus: [
         {
           name: 'Home',
@@ -22,7 +22,7 @@ export const home = defineStore('home', {
       current_city: null,
       ranges: [],
       typeRange: 'Semana', // Dia, Semana
-      optionsView: ['Temperatura', 'IndiceUV', 'Humendad'],
+      optionsView: ['Temperatura', 'IndiceUV', 'Humedad', 'Gas', 'Presion'],
       viewSelected: 'Temperatura',
       temperature: 0,
       history: [], //{dia: 1, promedio: 20}

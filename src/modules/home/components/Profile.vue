@@ -6,13 +6,12 @@
       <fa v-if="isDark" icon="sun" />
       <fa v-else icon="moon" />
     </button>
-    <button 
+    <!-- <button 
         v-if="!authenticated"
         class="text-primary-500 dark:text-primary-300 hover:bg-skin-primary/20 font-medium px-4 py-2 rounded-full transition-colors duration-200"
         >
         Login
-    </button>
-
+    </button> -->
 </template>
 
 <script setup>

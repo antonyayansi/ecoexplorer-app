@@ -8,7 +8,7 @@
           <ChartLine />
         </div>
         <div v-if="isLoading" class="w-full md:w-1/3">
-          <GaugeUV valor="25"/>
+          <GaugeUV valor="83"/>
         </div>
         <div class="w-full md:w-1/3">
           <Map />
