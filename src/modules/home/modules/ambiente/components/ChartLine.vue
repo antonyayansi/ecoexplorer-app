@@ -2,12 +2,12 @@
   <div v-if="!isLoading" class="m-2 p-2 shadow-md rounded-xl bg-primary-50/10">
     <div class="w-full flex justify-center space-x-2 py-2">
       <button 
-        @click="typeRange = 'day'"
-        :class="typeRange == 'day' ? 'bg-primary-500' : 'bg-primary-200'"
+        @click="typeRange = 'Hoy'"
+        :class="typeRange == 'Hoy' ? 'bg-primary-500' : 'bg-primary-200'"
         class="text-white p-2 rounded-xl">Hoy</button>
         <button 
-        @click="typeRange = 'week'"
-        :class="typeRange == 'week' ? 'bg-primary-500' : 'bg-primary-100'"
+        @click="typeRange = 'Semana'"
+        :class="typeRange == 'Semana' ? 'bg-primary-500' : 'bg-primary-100'"
         class="text-white p-2 rounded-xl">Semana</button>
     </div>
     <div class="w-full">
@@ -43,9 +43,10 @@ ChartJS.register(
 
 const { 
   isDark,
-  ranges,
+  history, 
   typeRange,
-  getRanges
+  getDataByTipo,
+  viewSelected
 } = useHome()
 
 const isLoading = ref(true)
@@ -91,10 +92,11 @@ const setOptions = () => {
 }
 
 const setData = async () => {
+  await getDataByTipo() 
   //format ranges
   let labels = []
-  let dias = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
-  if(typeRange.value == 'day') {
+  let dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+  if(typeRange.value == 'Hoy') {
     for(let i = 0; i < 23; i++) {
       labels.push(`${i}:00`)
     }
@@ -104,13 +106,18 @@ const setData = async () => {
     }
   }
 
+  const temp_data = [];
+  history.value.map(item => {
+    temp_data.push(item.promedio)
+  })
+
   return {
     labels: labels,
     datasets: [
       {
-        label: 'Temperatura (ºC)',
+        label: viewSelected.value,
         backgroundColor: isDark.value ? '#C1D9FD' : '#5774AE',
-        data: [40, 39, 10, 40, 39, 80, 40],
+        data: temp_data,
         fill: false,
         borderColor: isDark.value ? '#C1D9FD' : '#5774AE',
         lineTension: 0.8
@@ -139,8 +146,17 @@ watch(
   }
 )
 
+watch(
+  () => viewSelected.value,
+  async () => {
+    isLoading.value = true
+    options.value = setOptions()
+    data.value = await setData()
+    isLoading.value = false
+  }
+)
+
 onMounted(async () => {
-  //await getRanges()
   options.value = setOptions() 
   data.value = await setData()
   isLoading.value = false

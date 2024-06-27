@@ -7,7 +7,10 @@
         <div class="w-full md:w-2/3">
           <ChartLine />
         </div>
-        <div class="w-full">
+        <div v-if="isLoading" class="w-full md:w-1/3">
+          <GaugeUV valor="25"/>
+        </div>
+        <div class="w-full md:w-1/3">
           <Map />
         </div>
     </div>
@@ -15,8 +18,15 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
 import AmbienteCard from '../modules/ambiente/components/CardIndex.vue'
 import ChartLine from '../modules/ambiente/components/ChartLine.vue';
 import Map from '../modules/ambiente/components/Map.vue'
+import GaugeUV from '../modules/ambiente/components/GaugeUV.vue';
 
+const isLoading = ref(false)
+
+onMounted(async () => {
+  isLoading.value = true 
+})
 </script>

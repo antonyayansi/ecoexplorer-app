@@ -9,6 +9,6 @@ export default () => {
       getCurrentCityByIp: home().getCurrentCityByIp,
       checkDarkMode: home().checkDarkMode,
       setDarkMode: home().setDarkMode,
-      getRanges: home().getRanges,
+      getDataByTipo: home().getDataByTipo
     }
 }

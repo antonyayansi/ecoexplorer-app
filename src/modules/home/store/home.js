@@ -21,9 +21,11 @@ export const home = defineStore('home', {
       cities: [],
       current_city: null,
       ranges: [],
-      typeRange: 'day', // day, week, month
-      optionsView: ['Temperatura', 'Radiación', 'Presión'],
+      typeRange: 'Semana', // Dia, Semana
+      optionsView: ['Temperatura', 'IndiceUV', 'Humendad'],
       viewSelected: 'Temperatura',
+      temperature: 0,
+      history: [], //{dia: 1, promedio: 20}
       devices: []
   }),
   actions: {
@@ -45,18 +47,6 @@ export const home = defineStore('home', {
         this.current_city = JSON.parse(localStorage.getItem('current_city'))
       }
     },
-    async getRanges(){
-      try{
-        const { data } = await publicApi.get('/rangos', {
-          params: {
-            tipo: this.typeRange
-          }
-        })
-        this.ranges = data
-      }catch(e){
-        console.error(e)
-      }
-    },
     checkDarkMode(){
       if(localStorage.getItem('isDark')){
         this.isDark = true
@@ -73,6 +63,24 @@ export const home = defineStore('home', {
         localStorage.removeItem('isDark')
       }
     },
-
+    //datos para ChartLine
+    async getDataByTipo(){
+        try{
+          const { data } = await publicApi.get('/get-data-format', {
+            params: {
+              tipo: this.viewSelected,
+              rango: this.typeRange
+            }
+          })
+          this.history = data
+          if(data.length){
+            if(this.viewSelected == 'Temperatura'){
+              this.temperature = data[data.length - 1]?.promedio
+            }
+          }
+        }catch(e){
+          console.log(e)
+        }
+    }
   }
 })
