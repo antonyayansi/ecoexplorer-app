@@ -7,7 +7,7 @@
     >
         <h1 class="font-bold text-sm">
             <fa icon="location-dot"/> 
-            <span class="ml-2">{{ current_city.city }} - {{ current_city.country }}</span>
+            <span class="ml-2">Cusco - PE</span>
         </h1>
     </button>
     <Transition name="slide-fade">
